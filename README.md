@@ -39,7 +39,7 @@ sudo docker run -it --rm \
   
 Edit: `synapse/homeserver.yaml`:
   
-Comment out sqlite database (*to be replaced with PostgreSQL*)
+Comment out sqlite database (*to be replaced with PostgreSQL*):
 ```
 #database:
 #  name: sqlite3
