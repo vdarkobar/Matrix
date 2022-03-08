@@ -1,3 +1,8 @@
+<p align="left">
+  <a href="https://github.com/vdarkobar/Home-Cloud#self-hosted-cloud">Home</a>
+  <br><br>
+</p> 
+  
 # Matrix
 An open network for secure, decentralized communication
   
