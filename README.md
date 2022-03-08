@@ -3,26 +3,6 @@ An open network for secure, decentralized communication
   
 ---
   
-To generate *Synapse Config* and run:
-*(skip this step, file already generated)*
-```
-sudo docker run -it --rm \
-    -v "$PWD/synapse:/data" \
-    -e SYNAPSE_SERVER_NAME=matrix.example.com \
-    -e SYNAPSE_REPORT_STATS=yes \
-    matrixdotorg/synapse:latest generate
- ```
-  or
- ```
-sudo docker run -it --rm \
-    -v "$PWD/synapse:/data" \
-    -e SYNAPSE_SERVER_NAME=matrix.example.com \
-    -e SYNAPSE_REPORT_STATS=yes \
-    -e UID=1000 \
-    -e GID=1000 \
-    matrixdotorg/synapse:latest generate
-```
-  
 Edit: `synapse/homeserver.yaml`:
   
 Comment out sqlite database (*to be replaced with PostgreSQL*):
