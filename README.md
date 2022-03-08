@@ -73,7 +73,7 @@ Deploy
 sudo docker-compose up -d
 ```
 
-View logs
+View logs for errors.
 
 To register new user(s):
   
