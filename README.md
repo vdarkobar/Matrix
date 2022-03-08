@@ -3,9 +3,9 @@ An open network for secure, decentralized communication
   
 ---
   
-Example for: element-config.json  - (https://develop.element.io/config.json)
-
-#Remove "default_server_name": "matrix.org" from element-config.json as this is deprecated and add custom homeserver to the top of element-config.json:
+To create *element-config.json*  copy: (https://develop.element.io/config.json), then 
+remove "default_server_name": "matrix.org" from element-config.json at the top of the file (deprecated) and 
+add custom homeserver to the top of file:
 ```
     "default_server_config": {
         "m.homeserver": {
@@ -18,7 +18,7 @@ Example for: element-config.json  - (https://develop.element.io/config.json)
     },
 ```
 
-#Generate Synapse Config:
+#To generate *Synapse Config* and run:
 ```
 sudo docker run -it --rm \
     -v "$PWD/synapse:/data" \
