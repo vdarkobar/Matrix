@@ -48,7 +48,7 @@ Comment out sqlite database (*to be replaced with PostgreSQL*):
 #    database: /data/homeserver.db
 ```
   
-Uncoment and edit values: 
+Uncomment and edit values: 
 ```
 database:
   name: psycopg2
