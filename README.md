@@ -8,7 +8,26 @@ An open network for secure, decentralized communication
   
 ---
   
-Edit: `synapse/homeserver.yaml`:
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>, add *Subdomain* for your *Matrix* Server. 
+```
+    CNAME | matrix | @ (or example.com)
+```
+  
+Add *Subdomain* for *Element-Web* client:
+```
+    CNAME | chat | @ (or example.com)
+```
+  
+---
+  
+#### *Decide what you will use for*:
+```
+Time Zone, UID/GID ...
+```
+  
+*Change Container names/Port numbers, before executing docker-compose up -d, if multiple instances are planed.*  
+  
+Edit: *`synapse/homeserver.yaml`*:
   
 Comment out sqlite database (*to be replaced with PostgreSQL*):
 ```
