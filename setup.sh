@@ -1,8 +1,8 @@
-sudo apt update
+# Some action
 
 wait #waits for all child background jobs to complete
 
-echo "Update completed."
+echo "Some action completed."
 
 sudo docker run -it --rm \
    -v "$PWD/synapse:/data" \
@@ -14,4 +14,4 @@ sudo docker run -it --rm \
 
 wait #waits for all child background jobs to complete
 
-echo "Job completed."
+echo "Generating a configuration file completed."
