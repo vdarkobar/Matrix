@@ -3,7 +3,7 @@ An open network for secure, decentralized communication
   
 ---
   
-element-config.json  - (https://develop.element.io/config.json)
+Example for: element-config.json  - (https://develop.element.io/config.json)
 
 #Remove "default_server_name": "matrix.org" from element-config.json as this is deprecated and add custom homeserver to the top of element-config.json:
 ```
