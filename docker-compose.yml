@@ -107,7 +107,7 @@ services:
 
   # Redis - Key-value Store
   redis:
-    image: redis:alpine
+    image: redis
     container_name: redis
     entrypoint: redis-server --appendonly yes --maxmemory 1024mb --maxmemory-policy allkeys-lru
     command: >
