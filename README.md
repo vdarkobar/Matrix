@@ -26,6 +26,7 @@ sudo docker run -it --rm \
     -e SYNAPSE_REPORT_STATS=yes \
     matrixdotorg/synapse:latest generate
  ```
+ or
  ```
 sudo docker run -it --rm \
     -v "$PWD/synapse:/data" \
