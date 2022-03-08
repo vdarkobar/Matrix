@@ -39,7 +39,7 @@ sudo docker run -it --rm \
   
 Edit: `synapse/homeserver.yaml`:
   
-Comment out sqlite database (to be replaced with postgres)
+Comment out sqlite database (*to be replaced with PostgreSQL*)
 ```
 #database:
 #  name: sqlite3
@@ -51,11 +51,13 @@ Uncoment and edit values:
 ```
 database:
   name: psycopg2
+  txn_limit: 10000
   args:
     user: <db_user from secrets>
     password: <db_password from secrets>
     database: synapse
     host: <postgres container name>
+    port: 5432
     cp_min: 5
     cp_max: 10
 ```
