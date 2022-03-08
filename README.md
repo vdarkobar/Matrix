@@ -5,7 +5,8 @@ An open network for secure, decentralized communication
   
 To create *element-config.json* use: <a href="https://develop.element.io/config.json">example file</a>, 
 remove `"default_server_name": "matrix.org"` (*deprecated*),  
-add custom homeserver block to the top of file:
+add custom homeserver block to the top of file:  
+*(skipp this step, file already exists)*
 ```
     "default_server_config": {
         "m.homeserver": {
