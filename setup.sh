@@ -10,7 +10,7 @@ sudo docker run -it --rm \
    -e SYNAPSE_REPORT_STATS=yes \
    -e UID=1000 \
    -e GID=1000 \
-   matrixdotorg/synapse:latest generate \
+   matrixdotorg/synapse:latest generate
 
 wait #waits for all child background jobs to complete
 
