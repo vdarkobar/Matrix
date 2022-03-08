@@ -78,9 +78,13 @@ Deploy:
 ```
 sudo docker-compose up -d
 ```
-
-View logs for errors.
-
+  
+### Log:
+```
+sudo docker-compose logs synapse
+sudo docker logs -tf --tail="50" synapse
+``` 
+  
 To register new user(s):
   
 access Docker shell:
@@ -99,5 +103,3 @@ To allow anyone to register an account set 'enable_registration' to true in the 
 This is NOT recomended. (?)
   
 Individual <a href="https://github.com/vdarkobar/Home-Cloud/blob/main/shared/Matrix.md">files</a> already contained in the resitory.
-
-
