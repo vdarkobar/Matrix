@@ -74,7 +74,7 @@ redis:
   enabled: true
   host: redis
   port: 6379
-  password: <redis-password>
+  password: <redis-password-from-.env>
 ```
   
 Deploy:
