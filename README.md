@@ -76,7 +76,7 @@ redis:
   password: <redis-password>
 ```
   
-Deploy
+Deploy:
 ```
 sudo docker-compose up -d
 ```
