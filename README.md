@@ -47,7 +47,7 @@ Comment out sqlite database (to be replaced with postgres)
 #    database: /data/homeserver.db
 ```
   
-Uncoment ad edit values: 
+Uncoment and edit values: 
 ```
 database:
   name: psycopg2
@@ -66,6 +66,12 @@ server_name: "matrix.example.com"
 web_client_location: https://<subdomain-for-element-web>.example.com
 public_baseurl: https://matrix.example.com/
 serve_server_wellknown: true
+
+redis:
+  enabled: true
+  host: redis
+  port: 6379
+  password: <redis-password>
 ```
   
 Deploy
