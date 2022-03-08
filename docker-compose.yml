@@ -31,10 +31,9 @@ services:
       - POSTGRES_USER_FILE=/run/secrets/db_user
       - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
       - POSTGRES_INITDB_ARGS= --encoding='UTF8' --lc-collate='C' --lc-ctype='C'
-      # add to .env
-      - UID=1000
-      - GID=1000
-      - TZ=Europe/Berlin
+      - UID=$UID
+      - GID=$GID
+      - TZ=$TZ
 
     volumes:
       - ./postgresdata:/var/lib/postgresql/data
@@ -47,6 +46,7 @@ services:
 
     depends_on:
       - postgres_db
+      - redis
 
     networks:
       -  matrix
@@ -63,10 +63,9 @@ services:
         mode: host
 
     environment:
-      # add to .env
-      - UID=1000
-      - GID=1000
-      - TZ=Europe/Berlin
+      - UID=$UID
+      - GID=$GID
+      - TZ=$TZ
 
     volumes:
      - ./synapse:/data
@@ -105,3 +104,24 @@ services:
     volumes:
       - ./nginx/matrix.conf:/etc/nginx/conf.d/matrix.conf
       - ./nginx/www:/var/www/
+
+  # Redis - Key-value Store
+  redis:
+    image: redis:alpine
+    container_name: redis
+    entrypoint: redis-server --appendonly yes --maxmemory 1024mb --maxmemory-policy allkeys-lru
+    command: >
+      --requirepass ${REDIS_PASSWORD}
+    restart: always
+
+    depends_on:
+      - postgres_db
+
+    networks:
+      - matrix
+
+    volumes:
+      - ./redis:/data
+
+    environment:
+      - TZ=$TZ
