@@ -1,0 +1,107 @@
+version: '3.9'
+
+networks:
+  matrix:
+    name: matrix
+    driver: bridge
+
+secrets:
+  db_user:
+    file: ./secrets/db_user.secret
+  db_password:
+    file: ./secrets/db_password.secret
+
+services:
+
+  # The PostgreSQL - object-relational database system
+  postgres_db:
+    image: postgres
+    container_name: postgres_db
+    restart: unless-stopped
+
+    networks:
+      - matrix
+
+    secrets:
+      - db_user
+      - db_password
+
+    environment:
+      - POSTGRES_DB=synapse
+      - POSTGRES_USER_FILE=/run/secrets/db_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
+      - POSTGRES_INITDB_ARGS= --encoding='UTF8' --lc-collate='C' --lc-ctype='C'
+      # add to .env
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Berlin
+
+    volumes:
+      - ./postgresdata:/var/lib/postgresql/data
+
+  # Synapse - reference implementation of a Matrix.org homeserver
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: synapse
+    restart: unless-stopped
+
+    depends_on:
+      - postgres_db
+
+    networks:
+      -  matrix
+
+    ports:
+      - target: 8008
+        published: 8008
+        protocol: tcp
+        mode: host
+
+      - target: 443
+        published: 8443
+        protocol: tcp
+        mode: host
+
+    environment:
+      # add to .env
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Berlin
+
+    volumes:
+     - ./synapse:/data
+
+  # Element - A glossy Matrix collaboration client for the web
+  element:
+    image: vectorim/element-web:latest
+    container_name: element-web
+    restart: unless-stopped
+
+    depends_on:
+      - postgres_db
+      - synapse
+
+    networks:
+      - matrix
+
+    ports:
+      - target: 80
+        published: 8099
+        protocol: tcp
+        mode: host
+
+    volumes:
+      - ./element-config.json:/app/config.json:ro
+
+  # NGINX - It started out as a web server...
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+
+    networks:
+      - matrix
+
+    volumes:
+      - ./nginx/matrix.conf:/etc/nginx/conf.d/matrix.conf
+      - ./nginx/www:/var/www/
