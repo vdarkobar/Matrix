@@ -65,3 +65,7 @@ Type: `exit`, to leave the container's shell.
   
 To allow anyone to register an account set 'enable_registration' to true in the homeserver.yaml.
 This is NOT recomended. (?)
+  
+Individual <a href="https://github.com/vdarkobar/Home-Cloud/blob/main/shared/Matrix.md">files</a> already contained in the resitory.
+
+
