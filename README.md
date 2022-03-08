@@ -20,6 +20,7 @@ add custom homeserver block to the top of file:
 ```
   
 To generate *Synapse Config* and run:
+*(skip this step, file already generated)*
 ```
 sudo docker run -it --rm \
     -v "$PWD/synapse:/data" \
