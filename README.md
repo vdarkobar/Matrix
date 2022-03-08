@@ -3,22 +3,6 @@ An open network for secure, decentralized communication
   
 ---
   
-To create *element-config.json* use: <a href="https://develop.element.io/config.json">example file</a>, 
-remove `"default_server_name": "matrix.org"` (*deprecated*),  
-add custom homeserver block to the top of file:  
-*(skip this step, file already exists)*
-```
-    "default_server_config": {
-        "m.homeserver": {
-            "base_url": "https://matrix.example.com",
-            "server_name": "matrix.example.com"
-        },
-        "m.identity_server": {
-            "base_url": "https://vector.im"
-        }
-    },
-```
-  
 To generate *Synapse Config* and run:
 *(skip this step, file already generated)*
 ```
