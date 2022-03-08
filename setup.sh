@@ -1,6 +1,6 @@
 sudo apt update
 
-wait -n
+wait #waits for all child background jobs to complete
 
 echo "Update completed."
 
@@ -12,6 +12,6 @@ sudo docker run -it --rm \
    -e GID=1000 \
    matrixdotorg/synapse:latest generate \
 
-wait -n
+wait #waits for all child background jobs to complete
 
 echo "Job completed."
