@@ -27,6 +27,14 @@ Time Zone, UID/GID ...
   
 *Change Container names/Port numbers, before executing docker-compose up -d, if multiple instances are planed.*  
   
+### *Run this command*:
+```
+RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
+cd "$NAME" && git clone https://github.com/vdarkobar/Matrix.git . && \
+chmod +x setup.sh && \
+./setup.sh
+```
+  
 Edit: *`synapse/homeserver.yaml`*:
   
 Comment out sqlite database (*to be replaced with PostgreSQL*):
