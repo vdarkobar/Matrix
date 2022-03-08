@@ -41,7 +41,7 @@ sudo docker run -it --rm \
 sudo docker-compose up -d
 ```
 
-# View logs
+#View logs
 
 #Access docker shell:
 ```
