@@ -20,6 +20,12 @@ services:
     networks:
       - matrix
 
+    ports:
+      - target: 5432
+        published: $POSTGRES_PORT
+        protocol: tcp
+        mode: host
+
     secrets:
       - db_password
 
@@ -116,6 +122,12 @@ services:
 
     networks:
       - matrix
+      
+    ports:
+      - target: 6379
+        published: $REDIS_PORT
+        protocol: tcp
+        mode: host
 
     volumes:
       - ./redis:/data
