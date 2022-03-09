@@ -6,8 +6,6 @@ networks:
     driver: bridge
 
 secrets:
-  db_user:
-    file: ./secrets/db_user.secret
   db_password:
     file: ./secrets/db_password.secret
 
@@ -23,12 +21,11 @@ services:
       - matrix
 
     secrets:
-      - db_user
       - db_password
 
     environment:
       - POSTGRES_DB=synapse
-      - POSTGRES_USER_FILE=/run/secrets/db_user
+      - POSTGRES_USER=db_user
       - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
       - POSTGRES_INITDB_ARGS= --encoding='UTF8' --lc-collate='C' --lc-ctype='C'
       - UID=$UID
