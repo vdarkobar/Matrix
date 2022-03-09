@@ -12,6 +12,7 @@ echo -ne "${RED}Enter Synapse Port Number (*:8008): "; read SYNPORT; \
 echo -ne "${RED}Enter Synapse Secure Port Number (*:443): "; read SYNSPORT; \
 echo -ne "${RED}Enter Element-Web Port Number (*:80): "; read EWPORT; \
 echo -ne "${RED}Enter Redis Port Number (*:6379): "; read REDPORT; \
+echo -ne "${RED}Enter PostgreSQL Port Number (*:5432): "; read PGPORT; \
 
 sed -i "s|CHTZ|${TZONE}|" .env && \
 sed -i "s|CHUID|${UID}|" .env && \
@@ -20,6 +21,7 @@ sed -i "s|CHSYN1|${SYNPORT}|" .env && \
 sed -i "s|CHSYN2|${SYNSPORT}|" .env && \
 sed -i "s|CHEW|${EWPORT}|" .env && \
 sed -i "s|CHRP|${REDPORT}|" .env && \
+sed -i "s|CHPSQL|${PGPORT}|" .env && \
 sed -i "s|CHDOM|${MSDNAME}|" gen.sh && \
 sed -i "s|CHUID|${UID}|" gen.sh && \
 sed -i "s|CHGID|${GID}|" gen.sh && \
