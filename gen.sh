@@ -9,5 +9,4 @@ sudo docker run -it --rm \
    -e UID=CHUID \
    -e GID=CHGID \
    matrixdotorg/synapse:latest generate
-wait #waits for all child background jobs to complete
-echo "Generating a configuration file completed."
+sleep 2
