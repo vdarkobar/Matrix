@@ -51,7 +51,7 @@ database:
   name: psycopg2
   txn_limit: 10000
   args:
-    user: <db_user from secrets>
+    user: db_user
     password: <db_password from secrets>
     database: synapse
     host: <postgres container name>
