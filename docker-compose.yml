@@ -50,12 +50,12 @@ services:
 
     ports:
       - target: 8008
-        published: 8008
+        published: $SYNAPSE_PORT
         protocol: tcp
         mode: host
 
       - target: 443
-        published: 8443
+        published: $SYNAPSE_SECURE_PORT
         protocol: tcp
         mode: host
 
@@ -82,7 +82,7 @@ services:
 
     ports:
       - target: 80
-        published: 8099
+        published: $ELEMENT_WEB_PORT
         protocol: tcp
         mode: host
 
