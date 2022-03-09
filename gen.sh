@@ -9,4 +9,4 @@ sudo docker run -it --rm \
    -e UID=CHUID \
    -e GID=CHGID \
    matrixdotorg/synapse:latest generate
-sleep 2
+sleep 1
