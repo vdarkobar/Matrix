@@ -38,9 +38,9 @@ chmod +x gen.sh && \
 ./gen.sh && \
 wait
 while true; do
-    read -p "Execute 'docker-compose up -d' now? (y/n)" yn
+    read -p "Open homeserver.yaml to finish setup? (y/n)" yn
     case $yn in
-        [Yy]* ) sudo docker-compose up -d; break;;
+        [Yy]* ) sudo nano synapse/homeserver.yaml; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
