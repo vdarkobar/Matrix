@@ -5,8 +5,8 @@ echo -ne "${RED}Enter Server Local IP: "; read MSLIP; \
 echo -ne "${RED}Enter Matrix Server Domain (example.com): "; read MSDNAME; \
 echo -ne "${RED}Enter Element-Web Client Subomain (chat): "; read EWSUBDNAME; \
 echo -ne "${RED}Enter Time Zone: "; read TZONE; \
-echo -ne "${RED}Enter UID: "; read UUID; \
-echo -ne "${RED}Enter GID: "; read GGID; \
+echo -ne "${RED}Enter UID (id $USER): "; read UUID; \
+echo -ne "${RED}Enter GID (id $USER): "; read GGID; \
 echo -ne "${RED}Enter Synapse Port Number (*:8008): "; read SYNPORT; \
 echo -ne "${RED}Enter Synapse Secure Port Number (*:443): "; read SYNSPORT; \
 echo -ne "${RED}Enter Element-Web Port Number (*:80): "; read EWPORT; \
