@@ -22,7 +22,8 @@ Add *Subdomain* for *Element-Web* client:
   
 #### *Decide what you will use for*:
 ```
-Time Zone, UID/GID ...
+Server Local-IP, Domain name, Subdomain for Element-Web client, Time Zone, UID/GID,
+Port nummbers: Synapse, Element-Web, Redis, PostgreSQL.
 ```
   
 *Change Container names/Port numbers, before executing docker-compose up -d, if multiple instances are planed.*  
