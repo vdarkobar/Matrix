@@ -86,7 +86,7 @@ sudo docker-compose logs synapse
 sudo docker logs -tf --tail="50" synapse
 ``` 
   
-To register new user(s):
+### To register new user(s):
   
 access Docker shell:
 ```
