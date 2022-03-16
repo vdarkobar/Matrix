@@ -100,7 +100,7 @@ register_new_matrix_user -c /data/homeserver.yaml http://localhost:8008
   
 Type: `exit`, to leave the container's shell.
   
-To allow anyone to register an account set 'enable_registration' to true in the homeserver.yaml.
+To allow anyone to register an account set *'enable_registration'* to *true* in the *homeserver.yaml*.
 This is NOT recomended. (?)
   
 Examine individual <a href="https://github.com/vdarkobar/Home-Cloud/blob/main/shared/Matrix.md">files</a> already contained in the resitory.
